@@ -95,8 +95,8 @@ function readStock(data){
 
 function feedDog(){
   dog.addImage(happyDogImg);
-
-  foodObj.updateFoodStock(foodObj.getFoodStock()-1);
+  foodObj.deductFood();
+  foodObj.updateFoodStock(foodObj.getFoodStock());
   database.ref('/').update({
     Food:foodObj.getFoodStock(),
     FeedTime:hour()
